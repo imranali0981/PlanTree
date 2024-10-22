@@ -27,12 +27,8 @@ mongoose
 
 app.use("/sensor-data", sensorDataRoute);
 
-const PORT = process.env.PORT || 3000;
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}...`);
-});
-
 // 172.16.71.134
 
 // ("mongodb+srv://imranali529081:<db_password>@cluster0.kbv5i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+
+export default app;

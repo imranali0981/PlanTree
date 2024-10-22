@@ -45,9 +45,9 @@ app.get("/", (req, res) => {
     </head>
     <body>
       <div class="container">
-        <h1>Welcome to AI-Apparel</h1>
+        <h1>Welcome to PLanTree</h1>
         <p>This is an example HTML response from the backend.</p>
-        <div class="footer">© 2024 AI-Apparel. All rights reserved.</div>
+        <div class="footer">© 2024 PlanTree. All rights reserved.</div>
       </div>
     </body>
     </html>

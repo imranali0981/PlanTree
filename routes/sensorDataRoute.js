@@ -23,4 +23,14 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/", async (req, res) => {
+  try {
+    const Datasensor = await SensorData.find();
+    res.status(200).json(Datasensor);
+  } catch (e) {
+    console.log("Error occured", e);
+    res.status(500).json({ message: "Unable to fetch data from database", e });
+  }
+});
+
 export default router;

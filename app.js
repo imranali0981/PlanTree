@@ -10,7 +10,11 @@ dotenv.config();
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Specify the allowed origin
+  })
+);
 app.use(express.json());
 
 // database connection

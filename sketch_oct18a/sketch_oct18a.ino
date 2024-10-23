@@ -3,8 +3,8 @@
 #include "DHT.h"
 
 // WiFi credentials
-const char* ssid = "Jawaid";     // Replace with your WiFi SSID
-const char* password = "wlane04d97"; // Replace with your WiFi Password
+const char* ssid = "GWN-Guest";     // Replace with your WiFi SSID
+const char* password = "F@st!234"; // Replace with your WiFi Password
 
 // Server details
 const char* serverUrl = "https://plan-tree-amber.vercel.app/sensor-data"; // Replace with your Node.js server IP and endpoint
@@ -56,7 +56,7 @@ void loop() {
       Serial.print("Sending Air Quality: ");
       Serial.println(mq135Value);
 
-      String payload = "{\"location\":\"Scheme 33\","
+      String payload = "{\"location\":\"Fast Uni\","
                        "\"temperature\":" + String(temperature) + 
                        ",\"humidity\":" + String(humidity) + 
                        ",\"mq135\":" + String(mq135Value) + "}";

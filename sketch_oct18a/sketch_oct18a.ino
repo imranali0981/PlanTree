@@ -3,8 +3,8 @@
 #include "DHT.h"
 
 // WiFi credentials
-const char* ssid = "GWN-Guest";     // Replace with your WiFi SSID
-const char* password = "F@st!234"; // Replace with your WiFi Password
+const char* ssid = "Muaaz";     // Replace with your WiFi SSID
+const char* password = "ammad317gb"; // Replace with your WiFi Password
 
 // Server details
 const char* serverUrl = "https://plan-tree-amber.vercel.app/sensor-data"; // Replace with your Node.js server IP and endpoint

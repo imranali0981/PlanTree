@@ -5,6 +5,7 @@ const SensorDataSchema = new mongoose.Schema({
   humidity: Number,
   mq135: Number,
   location: String,
+  label: Number,
   timestamp: {
     type: Date,
     default: Date.now,

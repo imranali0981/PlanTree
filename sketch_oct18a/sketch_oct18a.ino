@@ -3,11 +3,11 @@
 #include "DHT.h"
 
 // WiFi credentials
-const char* ssid = "Muaaz";     // Replace with your WiFi SSID
-const char* password = "ammad317gb"; // Replace with your WiFi Password
+const char* ssid = "Imran";     //Muaaz Replace with your WiFi SSID
+const char* password = "imranali421"; //ammad317gb Replace with your WiFi Password
 
 // Server details
-const char* serverUrl = "https://plan-tree-amber.vercel.app/sensor-data"; // Replace with your Node.js server IP and endpoint
+const char* serverUrl = "https://plan-tree-amber.vercel.app/sensor-data"; //http://192.168.100.94:3000/sensor-data Replace with your Node.js server IP and endpoint
 
 // DHT11 pin and type
 #define DHTPIN 4
@@ -56,7 +56,7 @@ void loop() {
       Serial.print("Sending Air Quality: ");
       Serial.println(mq135Value);
 
-      String payload = "{\"location\":\"Fast Uni\","
+      String payload = "{\"location\":\"New Karachi\","
                        "\"temperature\":" + String(temperature) + 
                        ",\"humidity\":" + String(humidity) + 
                        ",\"mq135\":" + String(mq135Value) + "}";
@@ -65,6 +65,7 @@ void loop() {
       http.begin(serverUrl);
       http.addHeader("Content-Type", "application/json");
       int httpResponseCode = http.POST(payload);
+      Serial.println("Trying Sending Data");
 
       if (httpResponseCode > 0) {
         Serial.println("Data sent successfully");

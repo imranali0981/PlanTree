@@ -65,7 +65,7 @@ if not location_counts.empty:
     print(location_counts)
 else:
     print("No areas require tree plantation based on KNN model predictions.")
-    
+
 precision = precision_score(y_test,y_pred)
 recall = recall_score(y_test,y_pred)
 

@@ -55,8 +55,21 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const Datasensor = await SensorData.find();
-    res.status(200).json(Datasensor);
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 100;
+    const skip = (page - 1) * limit;
+
+    const Datasensor = await SensorData.find().skip(skip).limit(limit);
+    const total = await SensorData.countDocuments();
+console.log("Total documents:", total);
+    console.log("Current page:", page);
+
+    res.status(200).json({
+      total,
+      page,
+      limit,
+      data: Datasensor,
+    });
   } catch (e) {
     console.log("Error occurred", e);
     res.status(500).json({ message: "Unable to fetch data from database", e });

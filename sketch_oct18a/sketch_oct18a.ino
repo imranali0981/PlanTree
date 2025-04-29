@@ -4,7 +4,7 @@
 
 // WiFi credentials
 const char* ssid = "Imran";     //Muaaz Replace with your WiFi SSID
-const char* password = "imranali421"; //ammad317gb Replace with your WiFi Password
+const char* password = "essafamily123"; //ammad317gb Replace with your WiFi Password
 
 // Server details
 const char* serverUrl = "https://plan-tree-amber.vercel.app/sensor-data"; //http://192.168.100.94:3000/sensor-data Replace with your Node.js server IP and endpoint

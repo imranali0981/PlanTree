@@ -8,7 +8,7 @@ import joblib
 # Connect to MongoDB
 client = MongoClient("mongodb+srv://imranali529081:imrankhan@cluster0.kbv5i.mongodb.net/plantree?retryWrites=true&w=majority&appName=Cluster0")
 db = client["plantree"]
-collection = db["sensordatas"]
+collection = db["sensordatas_test"]
 
 # Fetch Data from MongoDB
 data_cursor = collection.find({})

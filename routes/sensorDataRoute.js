@@ -61,7 +61,7 @@ router.get("/", async (req, res) => {
 
     const Datasensor = await SensorData.find().skip(skip).limit(limit);
     const total = await SensorData.countDocuments();
-console.log("Total documents:", total);
+    console.log("Total documents:", total);
     console.log("Current page:", page);
 
     res.status(200).json({
@@ -75,5 +75,29 @@ console.log("Total documents:", total);
     res.status(500).json({ message: "Unable to fetch data from database", e });
   }
 });
+
+// get latest data by location
+router.get("/latest/:location", async (req, res) => {
+  const { location } = req.params;
+  try {
+    const latest = await SensorData.findOne({ location }).sort({
+      timestamp: -1,
+    });
+
+    if (!latest) {
+      return res.status(404).send({ error: "No data found" });
+    }
+
+    res.send({
+      temperature: latest.temperature,
+      humidity: latest.humidity,
+      mq135: latest.mq135,
+    });
+  } catch (error) {
+    console.error("Error fetching latest data:", error);
+    res.status(500).send({ error: "Internal server error" });
+  }
+});
+
 
 export default router;

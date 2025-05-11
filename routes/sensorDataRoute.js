@@ -88,6 +88,7 @@ router.get("/latest/:location", async (req, res) => {
       return res.status(404).send({ error: "No data found" });
     }
 
+    console.log("Latest data:", latest);
     res.send({
       temperature: latest.temperature,
       humidity: latest.humidity,
@@ -98,6 +99,5 @@ router.get("/latest/:location", async (req, res) => {
     res.status(500).send({ error: "Internal server error" });
   }
 });
-
 
 export default router;

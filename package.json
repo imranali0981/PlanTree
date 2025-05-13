@@ -5,7 +5,8 @@
     "express": "^4.21.1",
     "mongodb": "^6.9.0",
     "mongoose": "^8.7.2",
-    "socket.io": "^4.8.0"
+    "socket.io": "^4.8.0",
+    "axios": "^0.21.1",
   },
   "name": "treeplanting",
   "version": "1.0.0",
